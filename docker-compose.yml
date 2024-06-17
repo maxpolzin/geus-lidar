@@ -7,9 +7,6 @@ services:
     network_mode: "host"
     restart: always
 
-# Update nginx to play recorder
-
-
   rosblox-studio:
     image: ghcr.io/rosblox/studio:latest
     volumes:
