@@ -3,13 +3,13 @@
     "3D!dv2yb2": {
       "cameraState": {
         "perspective": true,
-        "distance": 9.26582460318909,
-        "phi": 62.25281602002481,
-        "thetaOffset": -105.48811013767707,
+        "distance": 12.604988194479796,
+        "phi": 66.4930987055357,
+        "thetaOffset": -21.530512964534537,
         "targetOffset": [
-          -2.73720144334125,
-          -0.1867553310187723,
-          -9.08552331640037e-18
+          -0.334917079702858,
+          0.7585951836938776,
+          -8.118628136755711e-17
         ],
         "target": [
           0,
@@ -27,7 +27,9 @@
         "far": 5000
       },
       "followMode": "follow-pose",
-      "scene": {},
+      "scene": {
+        "labelScaleFactor": 0.5
+      },
       "transforms": {},
       "topics": {
         "/rslidar_points": {
@@ -35,6 +37,14 @@
           "colorField": "intensity",
           "colorMode": "colormap",
           "colorMap": "turbo"
+        },
+        "/livox/lidar": {
+          "visible": true,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo",
+          "pointSize": 2,
+          "decayTime": 0.75
         }
       },
       "layers": {},
@@ -48,6 +58,60 @@
         "poseEstimateThetaDeviation": 0.26179939
       },
       "imageMode": {}
+    },
+    "Plot!34b6enr": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/livox/imu.linear_acceleration.x",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/livox/imu.linear_acceleration.y",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/livox/imu.linear_acceleration.z",
+          "enabled": true
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": false,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240
+    },
+    "Plot!4i64mql": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/livox/imu.angular_velocity.x",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/livox/imu.angular_velocity.y",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/livox/imu.angular_velocity.z",
+          "enabled": true
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": false,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240
     }
   },
   "globalVariables": {},
@@ -57,5 +121,13 @@
     "speed": 1,
     "messageOrder": "receiveTime"
   },
-  "layout": "3D!dv2yb2"
+  "layout": {
+    "first": "3D!dv2yb2",
+    "second": {
+      "first": "Plot!34b6enr",
+      "second": "Plot!4i64mql",
+      "direction": "column"
+    },
+    "direction": "row"
+  }
 }

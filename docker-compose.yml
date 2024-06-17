@@ -3,11 +3,9 @@ services:
     image: docker.io/library/nginx
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ~/bags:/bags
     network_mode: "host"
     restart: always
-
-
-
 
 # Update nginx to play recorder
 
