@@ -6,6 +6,14 @@ services:
     network_mode: "host"
     restart: always
 
+
+# Add recorder
+
+# Remove ROSbridge??
+
+# Update nginx to play recorder
+
+
   rosblox-studio:
     image: ghcr.io/rosblox/studio:latest
     volumes:
@@ -41,7 +49,6 @@ services:
     image: ghcr.io/rosblox/ros-livox-ros-driver2:humble
     restart: always
     network_mode: "host"
-    privileged: true
     ipc: host
     pid: host
     volumes:
@@ -50,3 +57,19 @@ services:
       - UID=${HOST_UID}
       - ROS_DOMAIN_ID
     command: su - ros --whitelist-environment="ROS_DOMAIN_ID" /run.sh
+
+
+  ros-bag-recorder:
+    image: ghcr.io/rosblox/ros-bag-recorder:humble
+    restart: always
+    network_mode: "host"
+    ipc: host
+    pid: host
+    environment:
+      - UID=${HOST_UID}
+      - ROS_DOMAIN_ID
+    working_dir: /bags    
+    volumes:
+      - ~/bags:/bags
+      - ./ros-bag-recorder/qos_override.yaml:/qos_override.yaml
+    command: su - ros --whitelist-environment=ROS_DOMAIN_ID  -c 'source /opt/ros/humble/setup.bash; cd /bags; ros2 bag record --max-cache-size 1000000000 -s mcap  --qos-profile-overrides-path /qos_override.yaml  --max-bag-size 100000000 /livox/lidar /livox/imu'
