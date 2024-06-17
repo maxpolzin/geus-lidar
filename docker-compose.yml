@@ -7,9 +7,7 @@ services:
     restart: always
 
 
-# Add recorder
 
-# Remove ROSbridge??
 
 # Update nginx to play recorder
 
@@ -25,17 +23,6 @@ services:
 
   ros-foxglove-bridge:
     image: ghcr.io/rosblox/ros-foxglove-bridge:humble
-    restart: always
-    network_mode: "host"
-    ipc: host
-    pid: host
-    environment:
-      - UID=${HOST_UID}
-      - ROS_DOMAIN_ID
-    command: su - ros --whitelist-environment="ROS_DOMAIN_ID" /run.sh
-
-  ros-rosbridge-suite:
-    image: ghcr.io/rosblox/ros-rosbridge-suite:humble
     restart: always
     network_mode: "host"
     ipc: host
