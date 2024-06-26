@@ -35,6 +35,7 @@ services:
     pid: host
     volumes:
       - ./livox_ros_driver2/MID360_config.json:/colcon_ws/src/livox_ros_driver2/config/MID360_config.json
+      - ./livox_ros_driver2/msg_MID360_launch.py:/colcon_ws/src/livox_ros_driver2/launch_ROS2/msg_MID360_launch.py
     environment:
       - UID=${HOST_UID}
       - ROS_DOMAIN_ID
