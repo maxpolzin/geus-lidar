@@ -3,9 +3,9 @@
     "3D!dv2yb2": {
       "cameraState": {
         "perspective": true,
-        "distance": 12.604988194479796,
-        "phi": 66.4930987055357,
-        "thetaOffset": -21.530512964534537,
+        "distance": 7.547072050698666,
+        "phi": 66.49309870553564,
+        "thetaOffset": -21.53051296453458,
         "targetOffset": [
           -0.334917079702858,
           0.7585951836938776,
@@ -44,7 +44,7 @@
           "colorMode": "colormap",
           "colorMap": "turbo",
           "pointSize": 2,
-          "decayTime": 0.75
+          "decayTime": 0.5
         }
       },
       "layers": {},
@@ -84,7 +84,8 @@
       "showPlotValuesInLegend": false,
       "isSynced": true,
       "xAxisVal": "timestamp",
-      "sidebarDimension": 240
+      "sidebarDimension": 240,
+      "followingViewWidth": 60
     },
     "Plot!4i64mql": {
       "paths": [
@@ -111,7 +112,8 @@
       "showPlotValuesInLegend": false,
       "isSynced": true,
       "xAxisVal": "timestamp",
-      "sidebarDimension": 240
+      "sidebarDimension": 240,
+      "followingViewWidth": 60
     }
   },
   "globalVariables": {},
